@@ -151,7 +151,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: "skylark05/testu16javall"
+      sourceName: "skylark05/foo2"
       branch: "2.7"
 
   - name: mktg_img
@@ -180,7 +180,7 @@ resources:
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: skylark05/testu16javall
+      sourceName: skylark05/foo2
       branch: master
 
 # PEM key for AWS RC account
@@ -238,7 +238,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: skylark05/testu16all
+      sourceName: skylark05/foo
       branch: master
 
   - name: bvt_params
