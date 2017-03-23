@@ -113,7 +113,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: ragesh/python
+      sourceName: skylark05/sample_jacoco
       branch: "2.7"
 
   - name: www_img
@@ -180,7 +180,7 @@ resources:
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: "skylark05/testu16javall"
+      sourceName: skylark05/testu16javall
       branch: master
 
 # PEM key for AWS RC account
@@ -302,7 +302,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: dry-dock/u14
+      sourceName: skylark05/sample_jacoco
       branch: master
       buildOnTagPush: true
 
@@ -318,7 +318,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: dry-dock/u14all
+      sourceName: sample_jacoco
       branch: master
       buildOnTagPush: true
 
