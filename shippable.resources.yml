@@ -1,0 +1,676 @@
+resources:
+  - name: base_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16phpall
+      branch: master
+
+  - name: base_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: microbase_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16phpall
+      branch: master
+
+  - name: microbase_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: nexec_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16phpall
+      branch: master
+
+  - name: nexec_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: cexec_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16phpall
+      branch: "2.7"
+
+  - name: cexec_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: node_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: node_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16phpall
+      branch: master
+
+  ###############################
+  # begin Shippable Server resources
+  ###############################
+  - name: shipbits_ecr_cli
+    type: cliConfig
+    integration: "docker"
+    pointer:
+      region: "us-east-1"
+
+  - name: ship_dh_cli
+    type: cliConfig
+    integration: "docker"
+
+  - name: config_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16javall
+      branch: master
+
+  - name: api_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16javall
+      branch: master
+
+  - name: api_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: www_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: ragesh/python
+      branch: "2.7"
+
+  - name: www_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: micro_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16javall
+      branch: master
+
+  - name: micro_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: genexec_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: "2.7"
+
+  - name: mktg_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: "skylark05/testu16javall"
+      branch: "2.7"
+
+  - name: mktg_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: latest
+
+  - name: ship_ver
+    type: version
+    seed:
+      versionName: "5.3.1"
+
+  ###############################
+  # end Shippable Server resources
+  ###############################
+
+  ###############################
+  # begin alpha rc infra
+  ###############################
+
+# REPO of AWS Infra provisioning
+  - name: infra_repo
+    type: gitRepo
+    integration: "github"
+    pointer:
+      sourceName: "skylark05/testu16javall"
+      branch: master
+
+# PEM key for AWS RC account
+  - name: aws_rc_pem
+    type: integration
+    integration: skylark-pem
+
+# CREDS for AWS RC account
+  - name: aws_rc_access
+    type: integration
+    integration: skylark-aws
+
+  ###############################
+  # end alpha rc infra
+  ###############################
+
+
+  ###############################
+  # begin prod infra resources
+  ###############################
+
+# CREDS for AWS PROD account
+  - name: aws_prod_access
+    type: integration
+    integration: skylark-aws
+
+# PEM key for AWS PROD account
+  - name: aws_prod_pem
+    type: integration
+    integration: skylark-pem
+  ###############################
+  # end alpha rc infra
+  ###############################
+
+
+  ###############################
+  # begin RC resources
+  ###############################
+
+# Swarm node info for alpha
+  - name: aws_rc_swarm
+    type: params
+    version:
+      params:
+        foo: bar
+
+  ###############################
+  # end RC resources
+  ###############################
+
+  ###############################
+  # BEGIN BVT resources
+  ###############################
+  - name: bat_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16all
+      branch: master
+
+  - name: bvt_params
+    type: params
+    version:
+      params:
+        foo: bar
+        
+
+  ###############################
+  # END BVT resources
+  ###############################
+
+  ###############################
+  # BEGIN AMI Build resources
+  ###############################
+  - name: bldami_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16all
+      branch: master
+
+  - name: aws_bits_access
+    type: integration
+    integration: skylark-aws
+
+  - name: baseami_params
+    type: params
+    version:
+      params:
+        SOURCE_AMI: "ami-abcdefg"
+        VPC_ID: "vpc-abcdefg"
+        SUBNET_ID: "subnet-abcdefg"
+        SECURITY_GROUP_ID: "sg-abcdefg"
+        REGION: "us-east-1"
+
+  ###############################
+  # END AMI Build resources
+  ###############################
+
+  ###############################
+  # BEGIN notification resources
+  ###############################
+
+  - name: slack_rc
+    type: notification
+    integration: skylark-slack
+    pointer:
+      recipients:
+        - "#rc"
+  ###############################
+  # END notification resources
+  ###############################
+
+
+  ###############################
+  # BEGIN drydock resources
+  ###############################
+  - name: u14_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: dry-dock/u14
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "drydock/u14"
+    seed:
+      versionName: tip
+
+  - name: u14all_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: dry-dock/u14all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14all_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14nodall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14nodall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14pytall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu16all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14pytall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14cloall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu14all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14cloall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14golall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu14all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14golall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14javall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu14all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14javall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14scaall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testu14all
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14scaall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14ruball_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testnoyml
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14ruball_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14phpall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testnoyml
+      branch: master
+      buildOnTagPush: true
+
+  - name: u14phpall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u14cppall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testnoyml
+      branch: master
+
+  - name: u14cppall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: "skylark05/testnoyml"
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16all_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/testnoyml
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16all_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16nodall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/foo2
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16nodall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16pytall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/foo2
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16pytall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16cloall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/foo2
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16cloall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16golall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/foo2
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16golall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16javall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/foo2
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16javall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16scaall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/test_matrix
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16scaall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16ruball_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/test_matrix
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16ruball_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16phpall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/test_matrix
+      branch: master
+      buildOnTagPush: true
+
+  - name: u16phpall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  - name: u16cppall_repo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: skylark05/test_matrix
+      branch: master
+
+  - name: u16cppall_img
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "ragesh/python"
+    seed:
+      versionName: tip
+
+  ###############################
+  # END drydock resources
+  ###############################
+
+  ###############################
+  # Begin SSH Key to GH
+  ###############################
+
+  # CREDS for GH access for Shippable
+  - name: avi_gh_ssh
+    type: integration
+    integration: skylark-ssh
+
+  ###############################
+  # End SSH Key to GH
+  ###############################
+
+  - name: team_params
+    type: params
+    version:
+      params:
+        TEAM_ID: 0
+        TEAM_NAME: "pushPull"
+        ORG_NAME: "skylark05-test"
+        GITHUB_API_URL: 'https://api.github.com'
+        foo: bar
