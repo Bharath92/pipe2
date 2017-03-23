@@ -151,7 +151,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: "skylark05/foo2"
+      sourceName: skylark05/foo2
       branch: "2.7"
 
   - name: mktg_img
@@ -178,7 +178,7 @@ resources:
 # REPO of AWS Infra provisioning
   - name: infra_repo
     type: gitRepo
-    integration: "github"
+    integration: github
     pointer:
       sourceName: skylark05/foo2
       branch: master
@@ -318,7 +318,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: sample_jacoco
+      sourceName: skylark05/sample_jacoco
       branch: master
       buildOnTagPush: true
 
